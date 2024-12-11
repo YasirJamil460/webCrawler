@@ -1,0 +1,118 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  p, h3, h1 {
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+    transition: background-color 0.3s ease !important;
+  }
+  
+  /* Grid Styling */
+  ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .items {
+    background-color: #87ceeb;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: grid-column 0.4s ease, transform 0.4s ease !important;
+  }
+  
+  .items h3 {
+    margin: 0;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .items h3 .expand-icon {
+    font-size: 18px;
+    transition: transform 0.4s ease !important;
+  }
+
+.items h3 .expand-icon.rotate {
+  transform: rotate(90deg);
+}
+  
+.items p {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0 10px;
+  max-height: 0;
+  overflow: hidden;
+  background-color: #f0f8ff;
+  color: #333;
+  transition: max-height 0.4s ease, padding 0.4s ease !important;
+}
+ 
+.items.expanded {
+    grid-column: span 2;
+    transition: grid-column 0.4s ease !important;
+  }
+  
+  .items.expanded p {
+    padding: 10px;
+    max-height: 200px; /* Set a large enough value for your content */
+    text-align: left;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    ul {
+      grid-template-columns: 1fr;
+    }
+  }
+  
