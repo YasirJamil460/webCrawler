@@ -22,7 +22,7 @@ export class AppComponent {
       next: (response: any) => {
         console.log(response);
         
-        this.news = response.articles.map((article : any) => ({
+        this.news = response.articles.map((article : NEWS) => ({
           title: article.title,
           description: article.description,
           expanded: false, // Add expanded property dynamically
