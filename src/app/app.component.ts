@@ -22,7 +22,7 @@ export class AppComponent {
       next: (response: any) => {
         console.log(response);
         
-        this.news = response.articles.map((article: any) => ({
+        this.news = response.articles.map((article : any) => ({
           title: article.title,
           description: article.description,
           expanded: false, // Add expanded property dynamically
@@ -35,6 +35,9 @@ export class AppComponent {
       },
     });
   }
+
+
+  
 
   toggleExpand(item: NEWS) {
     item.expanded = !item.expanded; // Toggle expanded state
@@ -51,19 +54,3 @@ export class AppComponent {
 
 
 
-
-
-
-          // .subscribe({
-          //   next: (response) => {
-          //     this.news = response.articles.map(article => ({
-          //       title: article.title,
-          //       description: article.description,
-          //     }));
-          //     this.hasFetched = true;
-          //   },
-          //   error: (error) => {
-          //     console.error('Error fetching news:', error);
-          //     this.hasFetched = true;
-          //   }
-          // });

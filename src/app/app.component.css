@@ -54,7 +54,7 @@ body {
   .items {
     background-color: #87ceeb;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 10%);
     overflow: hidden;
     position: relative;
     transition: grid-column 0.4s ease, transform 0.4s ease !important;
@@ -104,13 +104,13 @@ body {
   }
   
   /* Responsive Design */
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     ul {
       grid-template-columns: repeat(2, 1fr);
     }
   }
   
-  @media (max-width: 480px) {
+  @media (width <= 480px) {
     ul {
       grid-template-columns: 1fr;
     }
