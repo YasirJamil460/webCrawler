@@ -7,6 +7,7 @@ import { FetchService } from './services/fetch.service';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule],
+  providers: [FetchService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -19,7 +20,7 @@ export class AppComponent {
 
   fetchNews() {
     this.fetchService.fetchNews().subscribe({
-      next: (response: any) => {
+      next: (response : any) => {
         console.log(response);
         
         this.news = response.articles.map((article : NEWS) => ({
